@@ -87,6 +87,7 @@ $(document).ready(function(){
   function showPosition(position) {
     currentLat = position.coords.latitude;
     currentLon = position.coords.longitude;
+    $(".rivalPokemon").css("background-image", "url('loading.gif')");
     distanceTraveled = Math.sqrt(Math.pow(currentLat-startingLat, 2)+Math.pow(currentLon-startingLon, 2))
     if (distanceTraveled > (0.00073 * battleCounter)) {
       battleCounter ++;
@@ -155,11 +156,15 @@ $(document).ready(function(){
         }
         $(".winTotal").empty();
         $(".winTotal").append("WINS: " + winTotal);
+        // once you figure the order shit out(it shows, but needs to let the rival type show first), this will be a good placeholder.
+        // $(".rivalPokemon").css("background-image", "url('loading.gif')");
       })
     }
   }
   $("#selection").on("submit", function(event){
     event.preventDefault();
+    $(".landingPage").css("background-image", "none");
+    $(".landingPage").css("height", "auto");
     $(".displayPokemon").empty();
     $("#start").empty();
     $("#start").append("<button>Start!</button>");
@@ -206,6 +211,7 @@ $(document).ready(function(){
   })
   $("#start").on("click", function(event){
     $(".landingPage").empty();
+    $(".rivalPokemon").css("background-image", "url('loading.gif')");
     setLocation();
     newLocation();
   })

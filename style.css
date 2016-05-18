@@ -46,3 +46,13 @@ form {
 #start {
   color: black
 }
+
+#textSelection {
+  width: 50vw;
+  font-weight: lighter;
+}
+
+.landingPage {
+  background-image: url('grouppokemon.jpg');
+  height: 100vh;
+}
